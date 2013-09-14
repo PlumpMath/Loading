@@ -15,7 +15,14 @@
         }
     });
 
-    $('.particle-orbit').on('mouseout touchend', function () {
+    $('.particle-orbit').on('mouseout', function () {
+        if (counter === true) {
+            $('.particle-collection').css('animation', 'none');
+            counter = false;
+        }
+    });
+
+    $(document).on('touchend', function () {
         if (counter === true) {
             $('.particle-collection').css('animation', 'none');
             counter = false;
