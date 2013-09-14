@@ -384,11 +384,14 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
+  -webkit-transform: rotateY(80deg);
   -webkit-transform-style: preserve-3d;
+  /*
   -webkit-animation-name: screenRotate;
   -webkit-animation-duration: 5s;
   -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear; }
+  -webkit-animation-timing-function: linear;
+  */ }
 
 .particle-orbit {
   /*
@@ -424,10 +427,17 @@ body {
 
 @-webkit-keyframes screenRotate {
   from {
-    -webkit-transform: rotateY(0deg); }
+    -webkit-transform: rotateZ(0deg) rotateY(80deg); }
 
   to {
-    -webkit-transform: rotateY(360deg); } }
+    -webkit-transform: rotateZ(360deg) rotateY(80deg); } }
+
+@-webkit-keyframes particleSpin {
+  from {
+    -webkit-transform: rotateX(0deg); }
+
+  to {
+    -webkit-transform: rotateX(360deg); } }
 
 .particle-collection .particle-orbit .particle-path .particle.particle-light-pink {
   background-color: #ffa56d; }
