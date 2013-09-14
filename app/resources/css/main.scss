@@ -1,0 +1,187 @@
+@import 'normalize';
+@import 'colors';
+@import 'fonts';
+
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+html, body, .particle-wrapper {
+	height:		100%;
+	overflow:	hidden;
+	width: 		100%;
+}
+
+body {
+	background: #eee;
+	font-family: 'Oxygen', Arial, sans-serif;
+	font-size: .875rem;
+	line-height: 150%;
+}
+
+@mixin transform-style {
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+@mixin perspective($amount) {
+	-webkit-perspective: $amount;
+	perspective: $amount;
+}
+
+.invisible {
+	display: none;
+}
+
+.sorry {
+	color: #888;
+	margin: -10.5px 0 0 -115px;
+	position: absolute;
+
+		top: 50%;
+		left: 50%;
+
+	text-align: center;
+	z-index: 5;
+}
+
+.loading {
+	color: #888;
+	margin: 100px 0 0 -30px;
+	position: absolute;
+
+		top: 50%;
+		left: 50%;
+
+	text-align: center;
+	z-index: 5;
+}
+
+.particle-wrapper {
+	-webkit-perspective: 1000;	
+}
+
+.particle-collection { 
+	position:relative;
+	width:100%;
+	height:100%;
+
+	-webkit-transform-style: preserve-3d;
+	-webkit-animation-name: screenRotate;
+	-webkit-animation-duration: 5s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+}
+
+.particle-orbit {
+	/*
+	border: 1px solid #000;
+	border-radius: 500px;
+	*/
+
+	position:absolute;
+	top:50%;
+	left:50%;
+
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: rotateX(80deg) rotateY(20deg);
+}
+
+.particle-path {
+	width:100%;
+	height:100%;
+	position:relative;
+	
+	-webkit-transform-style: preserve-3d;
+}
+
+.particle {
+	position: absolute;
+	top:-5px;
+	left:50%;
+	margin-left:-5px;
+	width:10px;
+	height:10px;
+}
+
+@-webkit-keyframes pathRotate { from { -webkit-transform: rotateZ(0deg);} to { -webkit-transform: rotateZ(360deg); } }
+@-webkit-keyframes screenRotate { from { -webkit-transform: rotateY(0deg);} to { -webkit-transform: rotateY(360deg); } }
+
+
+.particle-collection {
+
+	.particle-orbit {
+
+		.particle-path {
+
+			.particle {
+
+				&.particle-light-pink {
+					background-color: $light_pink;
+				}
+
+				&.particle-pink {
+					background-color: $pink;
+				}
+
+				&.particle-dark-pink {
+					background-color: $dark_pink;
+				}
+
+				&.particle-darkest-pink {
+					background-color: $darkest_pink;
+				}
+
+				&.particle-lighest-green {
+					background-color: $lightest_green;
+				}
+
+				&.particle-light-green {
+					background-color: $light_green;
+				}
+
+				&.particle-green {
+					background-color: $green;
+				}
+
+				&.particle-dark-green {
+					background-color: $dark_green;
+				}
+
+				&.particle-darkest-green {
+					background-color: $darkest_green;
+				}
+
+				&.particle-light-blue {
+					background-color: $light_blue;
+				}
+
+				&.particle-blue {
+					background-color: $blue;
+				}
+
+				&.particle-dark-blue {
+					background-color: $dark_blue;
+				}
+
+				&.particle-light-yellow {
+					background-color: $light_yellow;
+				}
+
+				&.particle-yellow {
+					background-color: $yellow;
+				}
+
+				&.particle-dark-yellow {
+					background-color: $dark_yellow;
+				}
+
+			}
+
+		}
+
+	}
+
+}

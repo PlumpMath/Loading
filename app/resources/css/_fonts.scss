@@ -1,0 +1,17 @@
+@mixin font_add($name, $file, $weight) {
+    font-family: $name;
+    /* DEV ONLY */ src: url('#{$file}.ttf');
+    /* PRODUCTION * /
+    src: url('#{$file}.eot');
+    src: local('☺'), url('#{$file}.woff') format('woff'), url('#{$file}.ttf') format('truetype'), url('#{$file}.svg') format('svg');
+    /**/
+    font-weight: $weight;
+}
+
+@font-face {
+    @include font_add('Oxygen', '../fonts/Oxygen/Oxygen-Light', normal);
+}
+
+@font-face {
+    @include font_add('Oxygen', '../fonts/Oxygen/Oxygen-Bold', bold);
+}
