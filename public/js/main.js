@@ -8,7 +8,7 @@
         angle           = [15,-20,50,60,55,-45,30,40,70,-70,25,20,-30,35,-40],
         delay           = [-1,1,.5,-.5,0,-1,0,1,.5,-.5,0,-.25,0,.25,0,.75],
         counter         = false;
-    $('.particle-orbit').on('mouseover touchstart', function () {
+    $('.particle-orbit').on('mouseover touchmove', function () {
         if (counter === false) {
             $('.particle-collection').css('animation', 'screenRotate 1s linear infinite alternate');
             counter = true;
@@ -22,7 +22,7 @@
         }
     });
 
-    $(document).on('touchend', function () {
+    $(document).on('touchend touchleave touchcancel', function () {
         if (counter === true) {
             $('.particle-collection').css('animation', 'none');
             counter = false;
